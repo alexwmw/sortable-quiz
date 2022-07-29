@@ -14,8 +14,8 @@ module.exports = {
       templateContent: `
           <html>
             <head>
-              <script defer src="solid.min.js"></script>
-              <script defer src="fontawesome.min.js"></script>
+              <script defer src="fontawesome/solid.min.js"></script>
+              <script defer src="fontawesome/fontawesome.min.js"></script>
               <meta name="viewport" content="width=device-width, initial-scale=1.0">
             </head>
             <body>
@@ -28,7 +28,7 @@ module.exports = {
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
-    clean: true,
+    //clean: true,
   },
   optimization: {
     runtimeChunk: "single",
