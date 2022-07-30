@@ -1,10 +1,21 @@
 import { $div, $i, $p } from "./$elements";
+import styles from "./app.module.less";
 
-export const $feedback = (children = []) => {
-  const correctIcon = $i(["fas", "fa-check", "feedbackIcon", "correctIcon"]);
-  const thatsRight = $p(["feedback_text"], "That's right!");
+export const $feedback = (feedbackStrings = [], children = []) => {
+  const $correctIcon = $i([
+    "fa",
+    "fas",
+    "fa-check-square",
+    styles.feedbackIcon,
+    styles.correctIcon,
+  ]);
+  const $affirmation = $p([styles.feedbackTitle], "Well done!");
 
-  children = [correctIcon, thatsRight, ...children];
+  const $pArray = feedbackStrings.map((string) => {
+    return $p([styles.feedbackText], string);
+  });
 
-  return $div(["feedback"], children);
+  children = [$correctIcon, $affirmation, ...$pArray, ...children];
+
+  return $div([styles.feedback], children);
 };

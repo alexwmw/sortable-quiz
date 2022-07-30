@@ -1,21 +1,29 @@
 import { $li, $i } from "./$elements";
+import styles from "./app.module.less";
 
 export const $sortableLi = (text = "") => {
-  const sortableIcon = $i(["fas", "fa-sort"]);
-  const correctIcon = $i(["fas", "fa-check", "feedbackIcon", "correctIcon"]);
+  const sortableIcon = $i(["fa", "fas", "fa-sort", styles.sortIcon]);
+  const correctIcon = $i([
+    "fa",
+    "fas",
+    "fa-check",
+    styles.feedbackIcon,
+    styles.correctIcon,
+  ]);
   const incorrectIcon = $i([
+    "fa",
     "fas",
     "fa-times",
-    "feedbackIcon",
-    "incorrectIcon",
+    styles.feedbackIcon,
+    styles.incorrectIcon,
   ]);
   const $el = $li(
-    ["itemStyle", "sortableStyle", "sortableItem"],
-    [sortableIcon, text, correctIcon, incorrectIcon]
+    [styles.itemStyle, styles.sortableItem],
+    [text, sortableIcon, correctIcon, incorrectIcon]
   );
   return $el;
 };
 
 export const $staticLi = (text = "") => {
-  return $li(["itemStyle", "staticStyle"], text);
+  return $li([styles.itemStyle, styles.staticItem], text);
 };
