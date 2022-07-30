@@ -1,5 +1,5 @@
 import { $div, $i, $p } from "./$elements";
-import styles from "./app.module.less";
+import styles from "./sortQuiz.module.less";
 
 export const $feedback = (feedbackStrings = [], children = []) => {
   const $correctIcon = $i([

@@ -1,5 +1,5 @@
 import { $btn } from "./$elements";
-import styles from "./app.module.less";
+import styles from "./sortQuiz.module.less";
 
 export const $checkButton = (onclick = (e) => {}) => {
   const title = "<span>Check</span>";

@@ -1,6 +1,6 @@
 import $ from "jquery";
 import Sortable from "sortablejs";
-import styles from "./app.module.less";
+import styles from "./sortQuiz.module.less";
 import { $feedback } from "./$feedbackContainer";
 import { $div, $ul } from "./$elements";
 import {
@@ -165,4 +165,7 @@ const $app = (settings = defaultSettings) => {
   return $container;
 };
 
-$root.append($app());
+//$root.append($app());
+export const __init = (settings) => $root.append($app(settings));
+
+export const hello = () => "Hello";

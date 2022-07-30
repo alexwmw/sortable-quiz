@@ -1,5 +1,5 @@
 import { $li, $i } from "./$elements";
-import styles from "./app.module.less";
+import styles from "./sortQuiz.module.less";
 
 export const $sortableLi = (text = "") => {
   const sortableIcon = $i(["fa", "fas", "fa-sort", styles.sortIcon]);

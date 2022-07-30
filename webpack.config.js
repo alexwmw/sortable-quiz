@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  entry: { index: "./src/index.js", jquery: "jquery/src/jquery" },
+  entry: { sortQuiz: "./src/sortQuiz.js", jqueryLocal: "jquery/src/jquery" },
   devtool: "inline-source-map",
   devServer: {
     static: "./dist",
@@ -29,6 +29,7 @@ module.exports = {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
     //clean: true,
+    library: { name: "[name]_lib", type: "umd" },
   },
   optimization: {
     runtimeChunk: "single",
